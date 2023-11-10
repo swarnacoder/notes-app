@@ -1,0 +1,117 @@
+.popupMobile {
+  height: auto;
+  width: 64%;
+  position: absolute;
+  top: 22%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popupHeading_Mobile {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 7px 10px 7px;
+}
+
+.popupGroup_Mobile {
+  margin: 10px 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popupGroup_Mobile > span {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  padding-right: 1rem;
+}
+
+.popupGroup_Mobile > input {
+  width: 50%;
+  height: 20px;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.popupGroupColor_Mobile {
+  margin: 10px 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popupGroupColor_Mobile > span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.popupColor_Mobile {
+  display: flex;
+  gap: 5px;
+}
+
+.popupColors_Mobile {
+  margin-left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.popupColors_Mobile.purple {
+  background-color: #b38bfa;
+}
+
+.popupColors_Mobile.pink {
+  background-color: #ff79f2;
+}
+
+.popupColors_Mobile.lightBlue {
+  background-color: #43e6fc;
+}
+
+.popupColors_Mobile.brown {
+  background-color: #f19576;
+}
+
+.popupColors_Mobile.darkBlue {
+  background-color: #0047ff;
+}
+
+.popupColors_Mobile.royalBlue {
+  background-color: #6691ff;
+}
+
+.popupColors_Mobile.highlight {
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.popupCreate_Mobile {
+  margin-top: 15px;
+}
+
+.popupCreate_Mobile > button {
+  height: 35px;
+  width: 60%;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background-color: black;
+  cursor: pointer;
+}

@@ -1,24 +1,29 @@
-.sidebarContainer{
-    width: 24vw;
+
+.sidebarContainer_Mobile {
+    width: 100%; 
     height: 100vh;
     overflow-y: auto;
-}
-.sidebarHeading{
+  }
+  
+  .sidebarHeading_Mobile {
     font-size: 1.5rem;
     font-weight: 600;
     margin: 1rem;
     text-align: left;
-}
-.sidebarPlus{
+  }
+  
+  .sidebarPlus_Mobile {
     height: 11vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-#plus{
-   font-size: 25px; 
-}
-.sidebarPlus > button {
+  }
+  
+  #plus_Mobile {
+    font-size: 25px;
+  }
+  
+  .sidebarPlus_Mobile > button {
     width: 80%;
     height: 6vh;
     border: none;
@@ -30,8 +35,9 @@
     gap: 0.5rem;
     align-items: center;
     font-size: 1rem;
-}
-.popupDesktop_overlay{
+  }
+  
+  .popup_Mobile {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,3 +46,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
+  
+  @media (min-width: 500px) {
+    .sidebarContainer_Mobile {
+      width: 24vw;
+    }
+  }
+  

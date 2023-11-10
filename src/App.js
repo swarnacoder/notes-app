@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import './App.css';
 import NoteContext from "./Context/noteContext";
 import { Provider } from "./Context/NoteState";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainContainerDesktop from './Components/MainContainerDesktop/MainContainerDesktop';
+import SidebarMobile from "./Components/Mobile/SidebarMobile/SidebarMobile";
+import NotesMobile from "./Components/Mobile/NotesMobile/NotesMobile"
+
+
 
 function App() {
 
@@ -28,9 +32,13 @@ function App() {
         {screenSize > 500 ? (
           <MainContainerDesktop />
         ) : (
-          <div>
-            </div>
-        )}
+          <Router>
+          <Routes>
+            <Route path="/" element={<SidebarMobile />} />
+            <Route path="/notes" element={<NotesMobile />} />
+          </Routes>
+        </Router>
+      )}
       </div>
     </Provider>
     </>

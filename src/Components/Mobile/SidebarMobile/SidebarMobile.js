@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./SidebarDesktop.css";
-import PopUpDesktop from "../PopUpDesktop/PopUpDesktop";
-import InitialNames from "../InitialNames/InitialNames";
+import "./SidebarMobile.css";
 
-function SidebarDesktop() {
+import InitialNamesMobile from "../InitialNamesMobile/InitialNamesMobile"; 
+import PopupMobile from "../PopupMobile/PopupMobile"
+
+
+
+function SidebarMobile() {
   const [titles, setTitles] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [groupNamesParent, setGroupNamesParent] = useState(
-    JSON.parse(localStorage.getItem("groupNames")) || []
+    localStorage.getItem("groupNames") || []
   );
-
 
   useEffect(() => {
     const data = localStorage.getItem("groupNames");
@@ -20,7 +22,7 @@ function SidebarDesktop() {
     }
   }, []);
 
- useEffect(() => {
+  useEffect(() => {
     if (groupNamesParent.length > 0) {
       const obj = JSON.parse(localStorage.getItem("groupNames"));
       const result = Object.keys(obj).map((key) => [obj[key]]);
@@ -34,9 +36,9 @@ function SidebarDesktop() {
   const handleClose = () => {
     setShowPopup(false);
   };
+
   const handleOverlayClick = (e) => {
     if (e.target === overlayRef.current) {
-      // Close the popup when the overlay is clicked
       setShowPopup(false);
     }
   };
@@ -45,27 +47,31 @@ function SidebarDesktop() {
 
   return (
     <>
-      <div className="sidebarContainer">
-        <div className="sidebarHeading">Pocket Notes</div>
-        <div className="sidebarPlus">
+      <div className="sidebarContainer_Mobile">
+        <div className="sidebarHeading_Mobile">Pocket Notes</div>
+        <div className="sidebarPlus_Mobile">
           <button onClick={handleClick}>
-            <span id="plus">+</span>
+            <span id="plus_Mobile">+</span>
             <span>Create Notes Group</span>
           </button>
         </div>
-       <div>
+
+
+        <div>
   {titles.length > 0 &&
     titles.map((title, index) => (
-      <InitialNames key={index} title={title} />
+      <InitialNamesMobile key={index} title={title} />
     ))}
 </div>
+
+
         {showPopup && (
           <div
-            className="popupDesktop_overlay"
+            className="popup_Mobile"
             ref={overlayRef}
             onClick={handleOverlayClick}
           >
-            <PopUpDesktop
+            <PopupMobile
               groupNamesParent={groupNamesParent}
               setGroupNamesParent={setGroupNamesParent}
               onClose={handleClose}
@@ -77,4 +83,4 @@ function SidebarDesktop() {
   );
 }
 
-export default SidebarDesktop;
+export default SidebarMobile;
