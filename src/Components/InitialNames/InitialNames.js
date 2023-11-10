@@ -10,7 +10,7 @@ function InitialNames({ title }) {
     .join("")
     .toUpperCase();
 
-  const newTitle = title[0].name
+  const shortTitle = title[0].name
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -29,7 +29,7 @@ function InitialNames({ title }) {
       <div className="initialLogo" style={{ backgroundColor: title[0].color }}>
         {nameInitals}
       </div>
-      <p>{newTitle}</p>
+      <p>{shortTitle}</p>
     </div>
   );
 }

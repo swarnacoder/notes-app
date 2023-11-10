@@ -8,38 +8,38 @@ import PopupMobile from "../PopupMobile/PopupMobile"
 
 function SidebarMobile() {
   const [titles, setTitles] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
-  const [groupNamesParent, setGroupNamesParent] = useState(
+  const [openPopup, setopenPopup] = useState(false);
+  const [groups, setGroups] = useState(
     localStorage.getItem("groupNames") || []
   );
 
   useEffect(() => {
     const data = localStorage.getItem("groupNames");
     if (data) {
-      setGroupNamesParent(JSON.parse(data));
+      setGroups(JSON.parse(data));
     } else {
-      setGroupNamesParent([]);
+      setGroups([]);
     }
   }, []);
 
   useEffect(() => {
-    if (groupNamesParent.length > 0) {
+    if (groups.length > 0) {
       const obj = JSON.parse(localStorage.getItem("groupNames"));
       const result = Object.keys(obj).map((key) => [obj[key]]);
       setTitles(result);
     }
-  }, [groupNamesParent]);
+  }, [groups]);
 
   const handleClick = () => {
-    setShowPopup(true);
+    setopenPopup(true);
   };
-  const handleClose = () => {
-    setShowPopup(false);
+  const handleClosed = () => {
+    setopenPopup(false);
   };
 
   const handleOverlayClick = (e) => {
     if (e.target === overlayRef.current) {
-      setShowPopup(false);
+      setopenPopup(false);
     }
   };
 
@@ -65,16 +65,16 @@ function SidebarMobile() {
 </div>
 
 
-        {showPopup && (
+        {openPopup && (
           <div
             className="popup_Mobile"
             ref={overlayRef}
             onClick={handleOverlayClick}
           >
             <PopupMobile
-              groupNamesParent={groupNamesParent}
-              setGroupNamesParent={setGroupNamesParent}
-              onClose={handleClose}
+              groups={groups}
+              setGroups={setGroups}
+              handleClose={handleClosed}
             />
           </div>
         )}

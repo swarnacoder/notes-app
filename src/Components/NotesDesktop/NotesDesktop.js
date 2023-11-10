@@ -33,7 +33,7 @@ function NotesDesktop() {
     }
   }, [selected, setNotes]);
 
-  const handleKeyDown = (e) => {
+  const handleEnterKey = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleSaveNotes();
@@ -126,7 +126,7 @@ function NotesDesktop() {
             value={text}
             placeholder="Enter your text here..........."
             onChange={handleChange}
-            onKeyDown={handleKeyDown}
+            onKeyDown={handleEnterKey}
           ></textarea>
 
           <img src={enter} alt="enter" onClick={handleSaveNotes} />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./PopUpDesktop.css";
 
-function PopUpDesktop({ groupNamesParent, setGroupNamesParent, onClose }) {
+function PopUpDesktop({ groups, setGroups, handleClose }) {
   const [groupName, setGroupName] = useState("");
   const [circleColor, setCircleColor] = useState("");
 
@@ -17,12 +17,12 @@ function PopUpDesktop({ groupNamesParent, setGroupNamesParent, onClose }) {
 
   const createGroup = () => {
     const newGroup = { name: groupName, color: circleColor };
-    setGroupNamesParent([...groupNamesParent, newGroup]);
+    setGroups([...groups, newGroup]);
     localStorage.setItem(
       "groupNames",
-      JSON.stringify([...groupNamesParent, newGroup])
+      JSON.stringify([...groups, newGroup])
     );
-    onClose();
+    handleClose();
   };
 
   return (

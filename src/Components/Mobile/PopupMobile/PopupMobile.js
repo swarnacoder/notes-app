@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./PopupMobile.css";
 
-function PopupMobile({ groupNamesParent, setGroupNamesParent, onClose }) {
+function PopupMobile({ groups, setGroups, handleClose  }) {
   const [groupName, setGroupName] = useState("");
   const [circleColor, setCircleColor] = useState("");
 
@@ -17,12 +17,12 @@ function PopupMobile({ groupNamesParent, setGroupNamesParent, onClose }) {
 
   const createGroup = () => {
     const newGroup = { name: groupName, color: circleColor };
-    setGroupNamesParent([...groupNamesParent, newGroup]);
+    setGroups([...groups, newGroup]);
     localStorage.setItem(
       "groupNames",
-      JSON.stringify([...groupNamesParent, newGroup])
+      JSON.stringify([...groups, newGroup])
     );
-    onClose();
+    handleClose();
   };
 
   return (
