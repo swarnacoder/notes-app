@@ -36,7 +36,6 @@ function SidebarDesktop() {
   };
   const handleOverlayClick = (e) => {
     if (e.target === overlayRef.current) {
-      // Close the popup when the overlay is clicked
       setopenPopup(false);
     }
   };
