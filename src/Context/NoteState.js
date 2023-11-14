@@ -7,7 +7,7 @@ const NoteState = createContext({
   setSelected: () => {},
 });
 
-const Provider = ({ children }) => {
+const AppProvider = ({ children }) => {
   const [selected, setSelected] = useState(""); 
   const [notes, setNotes] = useState([]); 
 
@@ -26,6 +26,6 @@ const Provider = ({ children }) => {
   );
 };
 
-export { Provider };
+export { AppProvider };
 
 export default NoteState;
