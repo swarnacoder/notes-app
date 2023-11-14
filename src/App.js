@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import NoteContext from "./Context/noteContext";
-import { Provider } from "./Context/NoteState";
+import { AppProvider } from "./Context/NoteState";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainContainerDesktop from './Components/MainContainerDesktop/MainContainerDesktop';
 import SidebarMobile from "./Components/Mobile/SidebarMobile/SidebarMobile";
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-    <Provider>
+    <AppProvider>
       <div className="App">
         {screenSize > 500 ? (
           <MainContainerDesktop />
@@ -40,7 +40,7 @@ function App() {
         </Router>
       )}
       </div>
-    </Provider>
+    </AppProvider>
     </>
   );
 }
