@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import NoteState from "../Context/NoteState" ;
 
-const NoteContext = () => {
+const useNoteContext = () => {
   return useContext(NoteState);
 }
 
-export default NoteContext;
+export default useNoteContext;
